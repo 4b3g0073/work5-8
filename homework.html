@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>花卉漢堡選單</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+    .hamburger {
+      display: block;
+      cursor: pointer;
+      padding: 15px;
+      background: beige;
+      font-size: 20px;
+    }
+
+    .menu {
+      display: none;
+      flex-direction: column;
+      background: beige;
+    }
+
+    .menu.active {
+      display: flex;
+    }
+
+    .item {
+      background: cyan;
+      width: 90%;
+      max-width: 300px;
+      margin: 10px auto;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .item img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .label {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    @media (min-width: 768px) {
+      .hamburger {
+        display: none;
+      }
+      .menu {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hamburger" onclick="toggleMenu()">☰ 選單</div>
+
+  <div class="menu" id="menu">
+    <div class="item">
+      <img src="https://shoplineimg.com/62cb90c69730d2004d2343f2/66f13052cf454c000f2323c7/750x.png?" alt="百合花" />
+      <div class="label">百合花</div>
+    </div>
+    <div class="item">
+      <img src="https://lh6.googleusercontent.com/proxy/aixMfluhs5IITPlxc4g2_qq_h-v7TlBK3FWBewURROgW0OvHHrNunQyPbjjYhhMo3t8EeDLDplQB5TQ1Oz5-RCmGSDLAJ2RirRBoF0QWalDuV6_i1loqCHnVeQ_yoL2yQzZadLpQu3-sBNCg3UHXC2a9?" alt="玉蘭花" />
+      <div class="label">玉蘭花</div>
+    </div>
+    <div class="item">
+      <img src="https://greenmedia.today/aimg/upload/images/2020/06/0608-4/01.jpg" alt="野花" />
+      <div class="label">野花</div>
+    </div>
+    <div class="item">
+        <img src="https://media-01.creema.net/blog/parts/1408-efa6346cfa3e0ceaa0bf255a0fe6e249.jpg" alt="玫瑰花" />
+        <div class="label">玫瑰花</div>
+      </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
